@@ -8,10 +8,10 @@ Versions are referenced from [source.android.com/source/build-numbers.html](http
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
 
-[npm-image]: https://img.shields.io/npm/v/android-version.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/android-version
-[travis-image]: https://img.shields.io/travis/dvoiss/android-version.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dvoiss/android-version
+[npm-image]: https://img.shields.io/npm/v/android-versions.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/android-versions
+[travis-image]: https://img.shields.io/travis/dvoiss/android-versions.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dvoiss/android-versions
 
 ## Install
 
