@@ -14,6 +14,7 @@
  * THIS SOFTWARE.
 */
 
+/* jshint node: true */
 "use strict";
 
 /**
@@ -69,7 +70,7 @@ function getFromDefaultPredicate(arg) {
   // Coerce arg to string for comparisons below.
   arg = arg.toString()
 
-  return getFromPredicate((version) => {
+  return getFromPredicate(function(version) {
     // Check API level before all else.
     if (arg === version.api.toString()) {
       return true
@@ -77,7 +78,7 @@ function getFromDefaultPredicate(arg) {
 
     // Compare semantic version. Consider using semver library to do proper comparisons.
     var cleanSemver = cleanSemanticVersion(arg)
-    if (version.semver != null && cleanSemver === version.semver) {
+    if (version.semver !== null && cleanSemver === version.semver) {
       return true
     }
 
@@ -88,19 +89,19 @@ function getFromDefaultPredicate(arg) {
 
 // The function to allow passing a predicate.
 function getFromPredicate(predicate) {
-  if (predicate == null) {
+  if (predicate === null) {
     return null
   }
 
-  return Object.keys(VERSIONS).filter((version) => {
+  return Object.keys(VERSIONS).filter(function(version) {
     return predicate(VERSIONS[version])
-  }).map((key) => VERSIONS[key])
+  }).map(function(key) { return VERSIONS[key] })
 }
 
 /**
  * The Android version codes available as keys for easier look-up.
  */
-Object.keys(VERSIONS).forEach((name) => {
+Object.keys(VERSIONS).forEach(function(name) {
   exports[name] = VERSIONS[name]
 })
 
@@ -116,7 +117,7 @@ exports.VERSIONS = VERSIONS
  *
  * @return {object} An object representing the version found or null if none found.
  */
-exports.get = (arg) => {
+exports.get = function(arg) {
   var result = exports.getAll(arg)
 
   if (result === null || result.length === 0) {
@@ -133,8 +134,8 @@ exports.get = (arg) => {
  *
  * @return {object} An object representing the version found or null if none found.
  */
-exports.getAll = (arg) => {
-  if (arg == null) {
+exports.getAll = function(arg) {
+  if (arg === null) {
     return null
   }
 
