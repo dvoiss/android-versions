@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+docs
+npm-debug.log
+*.sw*
+*.un~
+.idea/*
+Thumbs.db
+coverage/
+logs/
+.project
+build/

@@ -1,0 +1,30 @@
+{
+  "indent": 2,
+  "latedef": "nofunc",
+  "newcap": true,
+  "curly": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "strict": true,
+  "undef": true,
+  "unused": true,
+  "laxcomma": false,
+  "asi": true,
+  "boss": false,
+  "expr": true,
+  "sub": true,
+  "loopfunc": false,
+  "lastsemic": true,
+  "funcscope": false,
+  "esnext": true,
+  "noyield": true,
+  "browser": true,
+  "nonstandard": true,
+  "devel": true,
+  "node": true,
+  "mocha": true,
+  "validthis": true,
+  "globals": {
+    "define": false
+  }
+}

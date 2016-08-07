@@ -1,0 +1,83 @@
+"use strict";
+
+var test = require('tape')
+var android = require('..')
+
+test('get specific version by API level', (t) => {
+  t.plan(1)
+  t.equal(android.get(24).name, "Nougat")
+})
+
+test('getAll versions by API level', (t) => {
+  t.plan(1)
+  t.equal(android.getAll(24)[0].name, "Nougat")
+})
+
+test('get specific version by predicate', (t) => {
+  t.plan(2)
+
+  var actual = android.get((version) => {
+    return version.name.indexOf("on") !== -1
+  })
+  t.equal(actual.name, "Donut")
+
+  actual = android.get((version) => {
+    return version.ndk > 5 && version.api < 15
+  })
+  t.equal(actual.versionCode, "HONEYCOMB_MR1")
+})
+
+test('getAll versions by predicate', (t) => {
+  t.plan(2)
+
+  var actual = android.getAll((version) => {
+    return version.name.indexOf("on") !== -1
+  }).map((version) => version.name)
+  t.deepEqual(actual, ["Donut", "Honeycomb", "Honeycomb", "Honeycomb"])
+
+  actual = android.getAll((version) => {
+    return version.ndk > 5 && version.api < 15
+  }).map((version) => version.versionCode)
+  t.deepEqual(actual, ["HONEYCOMB_MR1", "HONEYCOMB_MR2", "ICE_CREAM_SANDWICH"])
+})
+
+test('get version by semantic version', (t) => {
+  t.plan(4)
+  t.equal(android.get("6.0").versionCode, android.M.versionCode)
+  t.equal(android.get("6.0.0").versionCode, android.M.versionCode)
+  t.equal(android.get("2.3").versionCode, android.GINGERBREAD.versionCode)
+  t.equal(android.get("2.3.3").versionCode, android.GINGERBREAD_MR1.versionCode)
+})
+
+test('access version codes object', (t) => {
+  t.plan(1)
+  t.ok(android.VERSIONS)
+})
+
+test('access specific versions directly', (t) => {
+  t.plan(24)
+  t.ok(android.BASE)
+  t.ok(android.BASE_1_1)
+  t.ok(android.CUPCAKE)
+  t.ok(android.DONUT)
+  t.ok(android.ECLAIR)
+  t.ok(android.ECLAIR_0_1)
+  t.ok(android.ECLAIR_MR1)
+  t.ok(android.FROYO)
+  t.ok(android.GINGERBREAD)
+  t.ok(android.GINGERBREAD_MR1)
+  t.ok(android.HONEYCOMB)
+  t.ok(android.HONEYCOMB_MR1)
+  t.ok(android.HONEYCOMB_MR2)
+  t.ok(android.ICE_CREAM_SANDWICH)
+  t.ok(android.ICE_CREAM_SANDWICH_MR1)
+  t.ok(android.JELLY_BEAN)
+  t.ok(android.JELLY_BEAN_MR1)
+  t.ok(android.JELLY_BEAN_MR2)
+  t.ok(android.KITKAT)
+  t.ok(android.KITKAT_WATCH)
+  t.ok(android.LOLLIPOP)
+  t.ok(android.LOLLIPOP_MR1)
+  t.ok(android.M)
+  t.ok(android.N)    
+})
