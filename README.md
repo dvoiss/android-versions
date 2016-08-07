@@ -29,6 +29,10 @@ const android = require('android-versions')
 console.log(android.get(23))
 // => { api: 23, ndk: 8, semver: "6.0", name: "Marshmallow", versionCode: "M" }
 
+// Get by version:
+console.log(android.get("2.3.3"))
+// => { api: 10, ndk: 5, semver: "2.3.3", name: "Gingerbread", versionCode: "GINGERBREAD_MR1" }
+
 // Get *all* by predicate:
 android.getAll((version) => {
   return version.ndk > 5 && version.api < 15
@@ -42,11 +46,11 @@ android.LOLLIPOP
 // Access the complete reference of Android versions with all info:
 android.VERSIONS
 // => {
-//   BASE:                   { api: 1,  ndk: 0, semver: "1.0", name: "(no code name)", versionCode: "BASE" },
+//   BASE:    { api: 1,  ndk: 0, semver: "1.0", name: "(no code name)", versionCode: "BASE" },
 //   ...
-//   CUPCAKE:                { api: 3,  ndk: 1, semver: "1.5", name: "Cupcake",        versionCode: "CUPCAKE" },
+//   CUPCAKE: { api: 3,  ndk: 1, semver: "1.5", name: "Cupcake",        versionCode: "CUPCAKE" },
 //   ...
-//   N:                      { api: 24, ndk: 8, semver: "7.0", name: "Nougat",         versionCode: "N" }
+//   N:       { api: 24, ndk: 8, semver: "7.0", name: "Nougat",         versionCode: "N" }
 // }
 ```
 
