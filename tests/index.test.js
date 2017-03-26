@@ -28,7 +28,7 @@ test('get specific version by predicate', (t) => {
 })
 
 test('getAll versions by predicate', (t) => {
-  t.plan(2)
+  t.plan(3)
 
   var actual = android.getAll((version) => {
     return version.name.indexOf("on") !== -1
@@ -39,6 +39,11 @@ test('getAll versions by predicate', (t) => {
     return version.ndk > 5 && version.api < 15
   }).map((version) => version.versionCode)
   t.deepEqual(actual, ["HONEYCOMB_MR1", "HONEYCOMB_MR2", "ICE_CREAM_SANDWICH"])
+
+  actual = android.getAll((version) => {
+    return version.api > 22
+  }).map((version) => version.versionCode)
+  t.deepEqual(actual, ["M", "N", "N_MR1"])
 })
 
 test('get version by semantic version', (t) => {
@@ -55,7 +60,7 @@ test('access version codes object', (t) => {
 })
 
 test('access specific versions directly', (t) => {
-  t.plan(24)
+  t.plan(25)
   t.ok(android.BASE)
   t.ok(android.BASE_1_1)
   t.ok(android.CUPCAKE)
@@ -79,5 +84,6 @@ test('access specific versions directly', (t) => {
   t.ok(android.LOLLIPOP)
   t.ok(android.LOLLIPOP_MR1)
   t.ok(android.M)
-  t.ok(android.N)    
+  t.ok(android.N)
+  t.ok(android.N_MR1)
 })

@@ -52,7 +52,8 @@ var VERSIONS = {
   LOLLIPOP:               { api: 21,    ndk: 8, semver: "5.0",   name: "Lollipop",           versionCode: "LOLLIPOP" },
   LOLLIPOP_MR1:           { api: 22,    ndk: 8, semver: "5.1",   name: "Lollipop",           versionCode: "LOLLIPOP_MR1" },
   M:                      { api: 23,    ndk: 8, semver: "6.0",   name: "Marshmallow",        versionCode: "M" },
-  N:                      { api: 24,    ndk: 8, semver: "7.0",   name: "Nougat",             versionCode: "N" }
+  N:                      { api: 24,    ndk: 8, semver: "7.0",   name: "Nougat",             versionCode: "N" },
+  N_MR1:                  { api: 25,    ndk: 8, semver: "7.1",   name: "Nougat",             versionCode: "N_MR1" }
 };
 
 // Clean the semantic version to accommodate the values in the table above.
