@@ -16,7 +16,10 @@ Versions are referenced from [source.android.com/source/build-numbers.html](http
 ## Install
 
 ```bash
+# NPM
 npm install android-versions --save
+# YARN
+yarn add android-versions
 ```
 
 ## Usage
