@@ -1,15 +1,14 @@
 {
   "name": "android-versions",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Get the name, API level, version level, NDK level, or version code from any version of Android.",
   "main": "index.js",
   "scripts": {
     "test": "tape tests/**/*.js",
-    "docs": "jsdoc -d ./docs/ index.js",
+    "docs": "jsdoc index.js -d ./docs/ -R README.md --debug",
     "jshint": "jshint ."
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "jsdoc": "^3.4.0",
     "jshint": "^2.9.2",

@@ -22,6 +22,7 @@
  *
  * Versions are referenced from here:
  * {@link https://source.android.com/source/build-numbers.html#platform-code-names-versions-api-levels-and-ndk-releases}
+ * {@link https://github.com/android/platform_frameworks_base/blob/master/core/java/android/os/Build.java}
  *
  * The version for "Current Development Build" ("CUR_DEVELOPMENT") is not included.
  *
@@ -53,7 +54,8 @@ var VERSIONS = {
   LOLLIPOP_MR1:           { api: 22,    ndk: 8, semver: "5.1",   name: "Lollipop",           versionCode: "LOLLIPOP_MR1" },
   M:                      { api: 23,    ndk: 8, semver: "6.0",   name: "Marshmallow",        versionCode: "M" },
   N:                      { api: 24,    ndk: 8, semver: "7.0",   name: "Nougat",             versionCode: "N" },
-  N_MR1:                  { api: 25,    ndk: 8, semver: "7.1",   name: "Nougat",             versionCode: "N_MR1" }
+  N_MR1:                  { api: 25,    ndk: 8, semver: "7.1",   name: "Nougat",             versionCode: "N_MR1" },
+  O:                      { api: 26,    ndk: 8, semver: "8.0.0", name: "Oreo",               versionCode: "O" }
 };
 
 // Clean the semantic version to accommodate the values in the table above.
