@@ -27,34 +27,53 @@ yarn add android-versions
 View the tests for more advanced usage.
 
 ```javascript
-// Get by API level:
 const android = require('android-versions')
+```
+
+#### Get by API level:
+```javascript
 console.log(android.get(23))
-// => { api: 23, ndk: 8, semver: "6.0", name: "Marshmallow", versionCode: "M" }
 
-// Get by version:
+=> { api: 23, ndk: 8, semver: "6.0", name: "Marshmallow", versionCode: "M" }
+```
+
+#### Get by version:
+
+```javascript
 console.log(android.get("2.3.3"))
-// => { api: 10, ndk: 5, semver: "2.3.3", name: "Gingerbread", versionCode: "GINGERBREAD_MR1" }
 
-// Get *all* by predicate:
+=> { api: 10, ndk: 5, semver: "2.3.3", name: "Gingerbread", versionCode: "GINGERBREAD_MR1" }
+```
+
+#### Get all by predicate:
+
+```
 android.getAll((version) => {
   return version.ndk > 5 && version.api < 15
 }).map((version) => version.versionCode)
-// => ["HONEYCOMB_MR1", "HONEYCOMB_MR2", "ICE_CREAM_SANDWICH"]
 
-// Access a specific version with all info:
+=> [ "HONEYCOMB_MR1", "HONEYCOMB_MR2", "ICE_CREAM_SANDWICH" ]
+```
+
+#### Access a specific version with all info:
+
+```
 android.LOLLIPOP
-// => { api: 21, ndk: 8, semver: "5.0", name: "Lollipop", versionCode: "LOLLIPOP" }
 
-// Access the complete reference of Android versions with all info:
+=> { api: 21, ndk: 8, semver: "5.0", name: "Lollipop", versionCode: "LOLLIPOP" }
+```
+
+#### Access the complete reference of Android versions with all info:
+
+```javascript
 android.VERSIONS
-// => {
-//   BASE:    { api: 1,  ndk: 0, semver: "1.0", name: "(no code name)", versionCode: "BASE" },
-//   ...
-//   CUPCAKE: { api: 3,  ndk: 1, semver: "1.5", name: "Cupcake",        versionCode: "CUPCAKE" },
-//   ...
-//   N:       { api: 24, ndk: 8, semver: "7.0", name: "Nougat",         versionCode: "N" }
-// }
+
+=> {
+  BASE:    { api: 1,  ndk: 0, semver: "1.0", name: "(no code name)", versionCode: "BASE" },
+  ...
+  N:       { api: 24, ndk: 8, semver: "7.0", name: "Nougat",         versionCode: "N" }
+  ...
+}
 ```
 
 ## Test
