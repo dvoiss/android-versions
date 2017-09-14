@@ -64,7 +64,7 @@ var VERSIONS = {
 function getAlternateSemVer(semver) {
   if (semver.match(/\d+.\d+.0/)) {
     return semver.replace(/.\d+$/, '')
-  } else if (semver.match(/\d+.\d+/)) {
+  } else if (semver.match(/^\d+.\d+$/)) {
     return semver + '.0'
   } else {
     return semver
