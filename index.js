@@ -56,13 +56,16 @@ var VERSIONS = {
   N:                      { api: 24,    ndk: 8, semver: "7.0",   name: "Nougat",             versionCode: "N" },
   N_MR1:                  { api: 25,    ndk: 8, semver: "7.1",   name: "Nougat",             versionCode: "N_MR1" },
   O:                      { api: 26,    ndk: 8, semver: "8.0.0", name: "Oreo",               versionCode: "O" }
-};
+}
 
-// Clean the semantic version to accommodate the values in the table above.
-// "6.0.0" will be made into "6.0" while "2.3.3" will remain "2.3.3".
-function cleanSemanticVersion(semver) {
-  if (semver.length > 3 && semver.substring(semver.length - 2, semver.length) === ".0") {
-    return semver.substring(0, semver.length - 2)
+// This altSemVer accomodates the variations of semantic versions in the table above.
+// For instance, Oreo is 8.0.0 while N is 7.0, searching for "8.0" or "8.0.0" will
+// return Oreo, or searching for "7.0" or "7.0.0" will return N. "2.2.0" will return Froyo.
+function getAlternateSemVer(semver) {
+  if (semver.match(/\d+.\d+.0/)) {
+    return semver.replace(/.\d+$/, '')
+  } else if (semver.match(/\d+.\d+/)) {
+    return semver + '.0'
   } else {
     return semver
   }
@@ -79,9 +82,9 @@ function getFromDefaultPredicate(arg) {
       return true
     }
 
-    // Compare semantic version. Consider using semver library to do proper comparisons.
-    var cleanSemver = cleanSemanticVersion(arg)
-    if (version.semver !== null && cleanSemver === version.semver) {
+    // Compare semver and alternate semver (see above).
+    var altSemVer = getAlternateSemVer(arg)
+    if (version.semver === arg || version.semver === altSemVer) {
       return true
     }
 
