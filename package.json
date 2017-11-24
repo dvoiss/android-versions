@@ -8,7 +8,9 @@
     "docs": "jsdoc index.js -d ./docs/ -R README.md --debug",
     "jshint": "jshint ."
   },
-  "dependencies": {},
+  "dependencies": {
+    "semver": "^5.4.1"
+  },
   "devDependencies": {
     "jsdoc": "^3.4.0",
     "jshint": "^2.9.2",

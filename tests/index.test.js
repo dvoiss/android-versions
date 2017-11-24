@@ -54,6 +54,33 @@ test('get version by semantic version', (t) => {
   t.equal(android.get("2.3.3").versionCode, android.GINGERBREAD_MR1.versionCode)
 })
 
+test('support version ranges', (t) => {
+  t.plan(7);
+  t.equal(android.get("4.4").versionCode, android.KITKAT.versionCode);
+  t.equal(android.get("4.4.0").versionCode, android.KITKAT.versionCode);
+  t.equal(android.get("4.4.1").versionCode, android.KITKAT.versionCode);
+  t.equal(android.get("4.4.2").versionCode, android.KITKAT.versionCode);
+  t.equal(android.get("4.4.3").versionCode, android.KITKAT.versionCode);
+  t.equal(android.get("4.4.4").versionCode, android.KITKAT.versionCode);
+  t.equal(android.get("4.4.5"), null);
+})
+
+test('support x-ranges', (t) => {
+  t.plan(12);
+  t.equal(android.get("4.1").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.0").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.1").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.2").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.3").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.4").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.5").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.6").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.7").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.8").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.9").versionCode, android.JELLY_BEAN.versionCode);
+  t.equal(android.get("4.1.10").versionCode, android.JELLY_BEAN.versionCode);
+});
+
 test('access version codes object', (t) => {
   t.plan(1)
   t.ok(android.VERSIONS)
