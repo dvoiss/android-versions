@@ -55,7 +55,8 @@ var VERSIONS = {
   M:                      { api: 23,    ndk: 8, semver: "6.0",               name: "Marshmallow",        versionCode: "M" },
   N:                      { api: 24,    ndk: 8, semver: "7.0",               name: "Nougat",             versionCode: "N" },
   N_MR1:                  { api: 25,    ndk: 8, semver: "7.1",               name: "Nougat",             versionCode: "N_MR1" },
-  O:                      { api: 26,    ndk: 8, semver: "8.0.0",             name: "Oreo",               versionCode: "O" }
+  O:                      { api: 26,    ndk: 8, semver: "8.0.0",             name: "Oreo",               versionCode: "O" },
+  O_MR1:                  { api: 27,    ndk: 8, semver: "8.1.0",             name: "Oreo",               versionCode: "O_MR1" }
 }
 
 var semver = require('semver');
