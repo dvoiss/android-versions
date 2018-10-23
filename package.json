@@ -11,7 +11,7 @@
     "semver": "^5.4.1"
   },
   "devDependencies": {
-    "jshint": "^2.9.2",
+    "jshint": "^2.9.6",
     "tape": "^4.6.0"
   },
   "repository": {
