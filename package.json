@@ -8,11 +8,11 @@
     "jshint": "jshint ."
   },
   "dependencies": {
-    "semver": "^5.4.1"
+    "semver": "^5.7.1"
   },
   "devDependencies": {
-    "jshint": "^2.9.6",
-    "tape": "^4.6.0"
+    "jshint": "^2.10.2",
+    "tape": "^4.11.0"
   },
   "repository": {
     "type": "git",
