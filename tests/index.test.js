@@ -86,7 +86,7 @@ test('access version codes object', (t) => {
 })
 
 test('access specific versions directly', (t) => {
-  t.plan(29)
+  t.plan(30)
   t.ok(android.BASE)
   t.ok(android.BASE_1_1)
   t.ok(android.CUPCAKE)
@@ -116,4 +116,5 @@ test('access specific versions directly', (t) => {
   t.ok(android.O_MR1)
   t.ok(android.P)
   t.ok(android.Q)
+  t.ok(android.R)
 })
