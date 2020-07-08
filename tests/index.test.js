@@ -54,10 +54,11 @@ test('get version by semantic version', (t) => {
   t.equal(android.get("2.3.3").versionCode, android.GINGERBREAD_MR1.versionCode)
 })
 
-test('support major version only', (t) => {
-  t.plan(2)
+test('matches incomplete semver when given more specific version', (t) => {
+  t.plan(3)
   t.equal(android.get("9.0").versionCode, android.P.versionCode)
   t.equal(android.get("9.0.0").versionCode, android.P.versionCode)
+  t.equal(android.get("7.1.1").versionCode, android.N_MR1.versionCode)
 })
 
 test('support version ranges', (t) => {
@@ -66,7 +67,7 @@ test('support version ranges', (t) => {
   tests.forEach((versionCode) => {
     t.equal(android.get(versionCode).versionCode, android.KITKAT.versionCode)
   })
-  t.equal(android.get("4.4.5"), null)
+  t.equal(android.get("4.4.5").versionCode, android.KITKAT_WATCH.versionCode)
 })
 
 test('support x-ranges', (t) => {
