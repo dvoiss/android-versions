@@ -91,9 +91,7 @@ function getFromDefaultPredicate(arg) {
     }
 
     var argSemver = formatSemver(arg)
-    var versionSemver = formatSemver(version.semver)
-
-    if (semver.valid(argSemver) && semver.satisfies(argSemver, versionSemver)) {
+    if (semver.valid(argSemver) && semver.satisfies(argSemver, version.semver)) {
       return true
     }
 
