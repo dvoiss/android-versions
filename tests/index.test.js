@@ -43,7 +43,7 @@ test('getAll versions by predicate', (t) => {
   actual = android.getAll((version) => {
     return version.api > 22
   }).map((version) => version.versionCode)
-  t.deepEqual(actual, ["M", "N", "N_MR1", "O", "O_MR1", "P", "Q"])
+  t.deepEqual(actual, ["M", "N", "N_MR1", "O", "O_MR1", "P", "Q", "R"])
 })
 
 test('get version by semantic version', (t) => {
