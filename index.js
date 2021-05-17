@@ -59,7 +59,8 @@ var VERSIONS = {
   O_MR1:                  { api: 27,    ndk: 8, semver: "8.1.0",             name: "Oreo",               },
   P:                      { api: 28,    ndk: 8, semver: "9",                 name: "Pie",                },
   Q:                      { api: 29,    ndk: 8, semver: "10",                name: "Android10",          },
-  R:                      { api: 30,    ndk: 8, semver: "11",                name: "Android11",          }
+  R:                      { api: 30,    ndk: 8, semver: "11",                name: "Android11",          },
+  S:                      { api: 31,    ndk: 8, semver: "12",                name: "Android12",          }
 }
 
 // Add a key to each version of Android for the "versionCode".
