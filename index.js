@@ -60,7 +60,9 @@ var VERSIONS = {
   P:                      { api: 28,    ndk: 8, semver: "9",                 name: "Pie",                },
   Q:                      { api: 29,    ndk: 8, semver: "10",                name: "Android10",          },
   R:                      { api: 30,    ndk: 8, semver: "11",                name: "Android11",          },
-  S:                      { api: 31,    ndk: 8, semver: "12",                name: "Android12",          }
+  S:                      { api: 31,    ndk: 8, semver: "12",                name: "Android12",          },
+  S_V2:                   { api: 32,    ndk: 8, semver: "12",                name: "Android12L",         },
+  TIRAMISU:               { api: 33,    ndk: 8, semver: "13",                name: "Android13",          }
 }
 
 // Add a key to each version of Android for the "versionCode".
