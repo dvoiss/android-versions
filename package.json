@@ -1,6 +1,6 @@
 {
   "name": "android-versions",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "Get the name, API level, version level, NDK level, or version code from any version of Android.",
   "main": "index.js",
   "scripts": {
