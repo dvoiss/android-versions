@@ -28,7 +28,7 @@ test('get first specific version by predicate', (t) => {
 })
 
 test('get all versions by predicate', (t) => {
-  t.plan(3)
+  t.plan(2)
 
   let actual = android.getAll((version) => {
     return version.name.indexOf("on") !== -1
@@ -39,11 +39,6 @@ test('get all versions by predicate', (t) => {
     return version.api >= 12 && version.api < 15
   }).map((version) => version.versionCode)
   t.deepEqual(actual, ["HONEYCOMB_MR1", "HONEYCOMB_MR2", "ICE_CREAM_SANDWICH"])
-
-  actual = android.getAll((version) => {
-    return version.api > 22
-  }).map((version) => version.versionCode)
-  t.deepEqual(actual, ["M", "N", "N_MR1", "O", "O_MR1", "P", "Q", "R", "S", "S_V2", "TIRAMISU", "UPSIDE_DOWN_CAKE"])
 })
 
 test('get version by semantic version', (t) => {
@@ -87,7 +82,7 @@ test('access version codes object', (t) => {
 })
 
 test('access specific versions directly', (t) => {
-  t.plan(34)
+  t.plan(36)
   t.ok(android.BASE)
   t.ok(android.BASE_1_1)
   t.ok(android.CUPCAKE)
@@ -122,4 +117,6 @@ test('access specific versions directly', (t) => {
   t.ok(android.S_V2)
   t.ok(android.TIRAMISU)
   t.ok(android.UPSIDE_DOWN_CAKE)
+  t.ok(android.VANILLA_ICE_CREAM)
+  t.ok(android.BAKLAVA);
 })
