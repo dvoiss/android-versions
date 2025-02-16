@@ -49,7 +49,9 @@ var VERSIONS = {
   S:                      { api: 31,    semver: "12",                name: "Android12",          releaseDate: "04 Oct 2021" },
   S_V2:                   { api: 32,    semver: "12",                name: "Android12L",         releaseDate: "07 Oct 2022" },
   TIRAMISU:               { api: 33,    semver: "13",                name: "Android13",          releaseDate: "15 Oct 2022" },
-  UPSIDE_DOWN_CAKE:       { api: 34,    semver: "14",                name: "Android14",          releaseDate: "04 Oct 2023" }
+  UPSIDE_DOWN_CAKE:       { api: 34,    semver: "14",                name: "Android14",          releaseDate: "04 Oct 2023" },
+  VANILLA_ICE_CREAM:      { api: 35,    semver: "15",                name: "Android15",          releaseDate: "03 Sep 2024" },
+  BAKLAVA:                { api: 36,    semver: "16",                name: "Android16",          releaseDate: "23 Jan 2025" }
 }
 
 // Add a key to each version of Android for the "versionCode".
