@@ -1,4 +1,3 @@
-/* jshint node: true */
 "use strict";
 
 var semver = require("semver");
@@ -63,7 +62,7 @@ Object.keys(VERSIONS).forEach(function(version) {
 // semver format requires <major>.<minor>.<patch> but we allow just <major>.<minor> format.
 // Coerce <major>.<minor> to <major>.<minor>.0
 function formatSemver(semver) {
-  if (semver.match(/^\d+.\d+$/)) {
+  if (semver.match(/^\d+\.\d+$/)) {
     return semver + '.0'
   } else {
     return semver
