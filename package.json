@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dvoiss/android-versions"
+    "url": "git+https://github.com/dvoiss/android-versions.git"
   },
   "bugs": {
     "url": "https://github.com/dvoiss/android-versions/issues"
